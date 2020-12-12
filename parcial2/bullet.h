@@ -4,15 +4,19 @@
 
 class bullet
 {
+private:
+    float d=800; //distancia entre cañones
+    float Xb;
+    float Yb;
+
+
 public:
     bullet();
     ~bullet();
 
-    float d=800; //distancia entre cañones
-    float Xb;
-    float Yb;
-    float RO = 0.05*d;
-    float RD = 0.025*d;
+
+
+
 
 };
 
