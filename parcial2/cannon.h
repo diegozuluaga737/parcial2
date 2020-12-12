@@ -26,7 +26,7 @@ private:
 public:
     cannon();
     void disparoOfen( float Yo, float Xd, float Yd, float RO,int Voo);
-  //  void ImprimirResultados1(int angle,int V0o,float x,float y,int t);
+  
 
     float getD() const;
     void setD(float value);
