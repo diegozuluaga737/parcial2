@@ -25,9 +25,11 @@ private:
 
 public:
     cannon();
-    void disparoOfen( float Yo, float Xd, float Yd, float RO,int Voo);
-    void disparoDef( float, float, float, float, int );
+    void disparoOfen( float , float , float , float,int );
+    void disparoDef( float, float, float, float,int );
+    void protegerDef(float,float,float,float ,int ,int );
 
+    bool verificar_impacto(float, float, float, float,int,int);
 
     float getD() const;
     void setD(float value);

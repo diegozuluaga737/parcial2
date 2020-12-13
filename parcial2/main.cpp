@@ -5,18 +5,11 @@ using namespace std;
 
 int main()
 {
-    int Voo,angleO,VO;
-
-    cout << "Ingrese la velocidad inicial desde la cual quiere probar: " << endl;
-    cin >> Voo;
-    cout << "Ingrese el angulo inicia para proteger el canon : " << endl;
-    cin >> angleO;
-    cout << "Ingrese la velocidad inicial para proteger el canon: " << endl;
-    cin >> VO;
-
+    int angleO,VO,op,Vi;
+    bool a=true;
 
     float Xo = 0;
-    float Yo = 100;
+    float Yo = 100;     // poner variables ingresadas por el usuario
     float Xd = 800;
     float Yd = 20;
 
@@ -36,8 +29,46 @@ int main()
         bala.setYd(Yd);
         bala.setRD(RD);
 
-        bala.disparoOfen( bala.getYo(),  bala.getXd(),  bala.getYd(),  bala.getRO(), Voo);
-        bala.disparoDef(bala.getYd(), bala.getXo(), bala.getYo(), bala.getRD(), Voo);
+while(a==true){
+    cout<<"1. para generar los disparos ofensivos,"<<'\n'<<
+          "2. para los disparos defensivos,"<<'\n'<<
+          "3. para el disparo ofensivo y la proteccion del defensivo"<<'\n'<<
+          "0. para salir"<<endl;
 
+    cin>>op;
+
+    switch (op) {
+    case 0: a=false;
+
+        break;
+
+    case 1: cout << "Ingrese la velocidad inicia a probar: " << endl;
+        cin >> Vi;
+        bala.disparoOfen( bala.getYo(),  bala.getXd(),  bala.getYd(),  bala.getRO(),Vi);
+
+        break;
+
+    case 2:cout << "Ingrese la velocidad inicia a probar: " << endl;
+        cin >> Vi;
+        bala.disparoDef(bala.getYd(), bala.getXo(), bala.getYo(), bala.getRD(),Vi);
+
+        break;
+
+    case 3: cout << "Ingrese el angulo inicial para proyectil ofensivo: " << endl;
+        cin >> angleO;
+        cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
+        cin >> VO;
+
+        int x=bala.verificar_impacto(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
+
+        if (x==true) bala.protegerDef( bala.getYo(), bala.getYd(),bala.getRD(), bala.getXd(),angleO,VO );
+
+        else {
+            cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
+        }
+
+   }
+}
+       
     return 0;
 }
