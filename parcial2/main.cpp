@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int angleO,VO,op,Vi;
+    int angleO,VO,op,Vi,x;
     bool a=true;
 
     float Xo = 0;
@@ -59,13 +59,16 @@ while(a==true){
         cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
         cin >> VO;
 
-        int x=bala.verificar_impacto(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
+         x=bala.verificar_impactoDef(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
 
         if (x==true) bala.protegerDef( bala.getYo(), bala.getYd(),bala.getRD(), bala.getXd(),angleO,VO );
 
         else {
             cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
         }
+        break;
+
+
 
    }
 }
