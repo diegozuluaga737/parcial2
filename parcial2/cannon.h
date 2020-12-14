@@ -28,6 +28,8 @@ public:
     void disparoOfen( float , float , float , float,int );
     void disparoDef( float, float, float, float,int );
     void protegerDef(float,float,float,float ,int ,int );
+    void protegerDefandOfen(float,float,float,float ,int ,int);
+
 
     bool verificar_impactoDef(float, float, float, float,int,int);
     bool verificar_impactoOfen(float, float, float, float,int,int);

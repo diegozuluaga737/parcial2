@@ -1,6 +1,5 @@
 #include <iostream>
 #include "cannon.h"
-#include <cannon.h>
 using namespace std;
 
 int main()
@@ -12,6 +11,7 @@ int main()
     float Yo = 100;     // poner variables ingresadas por el usuario
     float Xd = 800;
     float Yd = 20;
+
 
     float d = Xd-Xo;
 
@@ -33,6 +33,7 @@ while(a==true){
     cout<<"1. para generar los disparos ofensivos,"<<'\n'<<
           "2. para los disparos defensivos,"<<'\n'<<
           "3. para el disparo ofensivo y la proteccion del defensivo"<<'\n'<<
+          "4. para el disparo ofensivo y la proteccion del defensivo y ofensivo"<<'\n'<<
           "0. para salir"<<endl;
 
     cin>>op;
@@ -68,7 +69,19 @@ while(a==true){
         }
         break;
 
+    case 4: cout << "Ingrese el angulo inicial para proyectil ofensivo: " << endl;
+        cin >> angleO;
+        cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
+        cin >> VO;
 
+         x=bala.verificar_impactoDef(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
+
+        if (x==true) bala.protegerDef( bala.getYo(), bala.getYd(),bala.getRD(), bala.getXd(),angleO,VO );
+
+        else {
+            cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
+        }
+        break;
 
    }
 }
