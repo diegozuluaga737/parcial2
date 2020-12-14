@@ -29,7 +29,6 @@ public:
     void disparoDef( int );
     void protegerDef(int ,int );
     void protegerDefandOfen(int ,int);
-    void defenderBullet(int,int);
 
     bool verificar_impactoDef( int,int);
     bool verificar_impactoOfen(int,int);

@@ -50,7 +50,6 @@ while(a==true){
           "2. para los disparos defensivos,"<<'\n'<<
           "3. para el disparo ofensivo y la proteccion del defensivo"<<'\n'<<
           "4. para el disparo ofensivo y la proteccion del defensivo y ofensivo"<<'\n'<<
-         // "5. para el proteccion del disparo ofensivo"<<'\n'<<
           "0. para salir"<<endl;
 
     cin>>op;
@@ -100,18 +99,7 @@ while(a==true){
         }
         break;
 
-    /*case 5:cout << "Ingrese el angulo inicial para proyectil ofensivo: " << endl;
-        cin >> angleO;
-        cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
-        cin >> VO;
-        x=bala.verificar_impactoDef( angleO, VO);
 
-       if (x==true) bala.defenderBullet( angleO, VO);
-
-       else {
-           cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
-       }
-        break;*/
 
    }
 }
