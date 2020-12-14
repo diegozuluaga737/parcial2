@@ -6,12 +6,28 @@ int main()
 {
     int angleO,VO,op,Vi,x;
     bool a=true;
+    float Xo,Yo,Xd,Yd;
 
-    float Xo = 0;
-    float Yo = 100;     // poner variables ingresadas por el usuario
+    cout << "Ingrese posicion en x cannon ofensivo: " << endl;
+    cin >> Xo;
+    cout << "Ingrese posicion en y cannon ofensivo:: " << endl;
+    cin >> Yo;
+    cout << "Ingrese posicion en x cannon defensivo: " << endl;
+    cin >> Xd;
+    cout << "Ingrese posicion en x cannon defensivo: " << endl;
+    cin >> Yd;
+
+
+    //balores de prueba
+
+   /* float Xo = 0;
+    float Yo = 100;
     float Xd = 800;
     float Yd = 20;
 
+    disparo ofensivo 31 grados, 85 velocidad
+
+*/
 
     float d = Xd-Xo;
 
@@ -34,6 +50,7 @@ while(a==true){
           "2. para los disparos defensivos,"<<'\n'<<
           "3. para el disparo ofensivo y la proteccion del defensivo"<<'\n'<<
           "4. para el disparo ofensivo y la proteccion del defensivo y ofensivo"<<'\n'<<
+         // "5. para el proteccion del disparo ofensivo"<<'\n'<<
           "0. para salir"<<endl;
 
     cin>>op;
@@ -45,13 +62,13 @@ while(a==true){
 
     case 1: cout << "Ingrese la velocidad inicia a probar: " << endl;
         cin >> Vi;
-        bala.disparoOfen( bala.getYo(),  bala.getXd(),  bala.getYd(),  bala.getRO(),Vi);
+        bala.disparoOfen( Vi);
 
         break;
 
     case 2:cout << "Ingrese la velocidad inicia a probar: " << endl;
         cin >> Vi;
-        bala.disparoDef(bala.getYd(), bala.getXo(), bala.getYo(), bala.getRD(),Vi);
+        bala.disparoDef(Vi);
 
         break;
 
@@ -60,9 +77,9 @@ while(a==true){
         cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
         cin >> VO;
 
-         x=bala.verificar_impactoDef(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
+         x=bala.verificar_impactoDef(angleO, VO);
 
-        if (x==true) bala.protegerDef( bala.getYo(), bala.getYd(),bala.getRD(), bala.getXd(),angleO,VO );
+        if (x==true) bala.protegerDef( angleO,VO );
 
         else {
             cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
@@ -74,14 +91,27 @@ while(a==true){
         cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
         cin >> VO;
 
-         x=bala.verificar_impactoDef(bala.getYo(),bala.getXd(),  bala.getYd(),  bala.getRO(), angleO, VO);
+         x=bala.verificar_impactoDef(angleO, VO);
 
-        if (x==true) bala.protegerDef( bala.getYo(), bala.getYd(),bala.getRD(), bala.getXd(),angleO,VO );
+        if (x==true) bala.protegerDef(angleO,VO );
 
         else {
             cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
         }
         break;
+
+    /*case 5:cout << "Ingrese el angulo inicial para proyectil ofensivo: " << endl;
+        cin >> angleO;
+        cout << "Ingrese la velocidad inicial para proyectil ofensivo: " << endl;
+        cin >> VO;
+        x=bala.verificar_impactoDef( angleO, VO);
+
+       if (x==true) bala.defenderBullet( angleO, VO);
+
+       else {
+           cout<<"el proyectil no impactara, intentelo de nuevo "<<endl;
+       }
+        break;*/
 
    }
 }

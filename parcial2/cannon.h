@@ -25,14 +25,14 @@ private:
 
 public:
     cannon();
-    void disparoOfen( float , float , float , float,int );
-    void disparoDef( float, float, float, float,int );
-    void protegerDef(float,float,float,float ,int ,int );
-    void protegerDefandOfen(float,float,float,float ,int ,int);
+    void disparoOfen(int );
+    void disparoDef( int );
+    void protegerDef(int ,int );
+    void protegerDefandOfen(int ,int);
+    void defenderBullet(int,int);
 
-
-    bool verificar_impactoDef(float, float, float, float,int,int);
-    bool verificar_impactoOfen(float, float, float, float,int,int);
+    bool verificar_impactoDef( int,int);
+    bool verificar_impactoOfen(int,int);
 
     float getD() const;
     void setD(float value);
